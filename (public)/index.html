@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/style.css">
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+	<script src="assets/index.js"></script>
+	<title>Ciarán Melarkey</title>
+</head>
+<body>
+
+<!--										Image Divider Section										-->
+<div class="header-image" onclick="replaceBG()" id="header-img">
+	<div class="header-text">
+    	<h1 class="header-style main-header-style">Ciarán Melarkey</h1>
+	</div>
+</div>
+
+<!--										About Me Section										-->
+<div class="body-div" id="about-me">
+	<div class="main-text-one">
+		<hr class="section-div">
+		<h2 class="header-style" >About Me</h2>
+		<div class="about-me">
+			<p class="main-text-blocks">
+				Hello, my name is Ciarán Melarkey. I am a graduate of the Letterkenny Institute of technology, where I studied general computer science. Over my four years at college, I was taught many aspects of computer science, these include:
+			</p>
+			<ul>
+				<li>Java</li>
+				<li>HTML</li>
+				<li>JavaScript, including notable libraries and frameworks</li>
+				<li>SQL</li>
+				<li>Python</li>
+				<li>Agile development</li>
+				<li>Data Science</li>
+			</ul>
+			<p class="main-text-blocks">
+				After college, I started to search for employment, but have so far been unsuccessful. To keep myself occupied, and to keep my skills sharp, I enrolled in online courses, some of which have allowed me to learn C.
+			</p>
+		</div>
+	</div>
+	<hr class="section-div">
+</div>
+
+<!--										Image Divider Section										-->
+<div class="mid-div-image">
+	<div class="header-text">
+		<h1 class="header-style main-header-style">Previous Work</h1>
+	</div>
+</div>
+
+<!--										 Coding Experience Section										-->
+<div class="body-div">
+	<div class="coding-experience">
+		<hr class="section-div">
+		<h2 class="header-style">Projects & Work</h2>
+		<div class="code-example">
+			<h3 class="header-style">Simple Discord Bot</h3>
+			<p class="main-text-blocks">
+			This was a small project to make a simple bot for the popular online communication app, Discord. The bot was written in JavaScript, and runs using node. The bot was built using an older version of Discord.js, and as such will not run using the latest version of it. Functions of the bot included:
+		</p>
+			<ul class="bot-list">
+				<li>Simple greeting</li>
+				<li>Message clearing</li>
+				<li>Pull XKCD comic at random, or specific one using a given argument</li>
+				<li>Pull random fact</li>
+				<li>Pull random picture of a cat</li>
+				<li>Play a game of Rock Paper Scissors</li>
+			</ul>
+			<button type="button" onclick="redirect(this.id)" class="contact-button code-example-button" id="GitHubRepo">GitHub Repo</button>
+		</div>
+		<div class="code-example">
+			<h3 class="header-style">CS50 Online Course</h3>
+			<p class="main-text-blocks">
+				Earlier this year, I enrolled in the online course CS50. This course teaches the fundamentals of computer science, which I already knew. I decided to do the course to keep myself occupied, and to keep myself up to date with computer science. I was also mainly interested in doing the practical assignments that were in the course. These assignments were a nice challenge that kept me occupied while I searched for work. In one assignment, I was tasked with applying filters over certain images. The filters were greyscale, sepia, blur, and flip. Another assignment was to recover images from an SD card. The program would read the data, find what bytes correlated to the start and end of an Image, and write the data of the image.
+			</p>
+		</div>
+		<div class="code-example">
+			<h3 class="header-style">This website!</h3>
+			<p class="main-text-blocks">
+				I began working on this website because I believed that it would help me in finding employment. The website began as a simple, static website hosted on GitHub pages that used HTML, CSS, and JavaScript. I had set a simple goal for myself: create a nice looking page that would allow me to show off my talents. The first iteration of the website was entirely front-end, and completely static. The most complex aspect of the website was the Code Snippet section. This used a JavaScript function to reveal a hidden div and play a smooth opening animation. The text within was hardcoded into the HTML page. Once I was finished working on this iteration of the website, I knew I could improve it.<br>Unfortunately, to improve the site and make it more dynamic, I would have to search for different hosting, as GitHub pages are used for static pages. I finally settled on using Google Firebase, which seemed perfect for what I hoped to accomplish. Firebase has built-in database support, this allowed me to store the code snippets in a JSON format, and dynamically display them on the website.
+			</p>
+		</div>
+	</div>
+	<hr class="section-div">
+</div>
+
+<!--										Image Divider Section										-->
+
+<div class="last-div-image">
+	<div class="header-text">
+    	<h1 class="header-style main-header-style">Code Snippets</h1>
+	</div>
+</div>
+
+<!--										Code Snippet Section										-->
+<div class="body-div">
+	<hr class="section-div">
+	<h2 class="header-style">Code Snippets</h2>
+	<p class="main-text-blocks">Please select a code snippet from the dropdown menu below!</p>
+	<div class="code-snippet-container">
+		<label for="snippet-select" class="header-style">Choose Snippet:</label>
+			<select name="snippet" id="snippet-select" onchange="fillSnippetBox(this.value)">
+				<option value="default">Select Code Snippet</option>
+			</select>
+		<div class="code-snippet-box" id="snip">
+			Filler
+		</div>
+	</div>
+	<hr class="section-div">
+</div>
+
+<!--										Footer Section										-->
+<div class="body-div">
+	<h3 class="header-style footer-header-style">Contact Me</h3>
+	<footer class="footer-container">
+		<div class="footer-element">
+			<table class="footer-link-table">
+				<tr>
+					<th><button type="button" onclick="redirect(this.id)" class="contact-button" id="LinkedIn">LinkedIn</button></th>
+					<th><button type="button" onclick="redirect(this.id)" class="contact-button" id="GitHub">GitHub</button></th>
+					<th><button type="button" onclick="redirect(this.id)" class="contact-button" id="Email">Email</button></th>
+				</tr>
+			</table>
+		</div>
+		<h3 class="header-style footer-header-style">Ciarán Melarkey © 2022</h3>
+	</footer>
+</div>
+</body>
+</html>
