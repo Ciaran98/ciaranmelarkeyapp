@@ -1,12 +1,12 @@
 //--------------------------- Firebase Setup ----------------------------------------------------\\
 const firebaseConfig = {
-  apiKey: "AIzaSyADX6gEHSAhnLaF2uXw8EH2QCK___lGB8E",
-  authDomain: "ciaranmelarkey-558cc.firebaseapp.com",
-  databaseURL: "https://ciaranmelarkey-558cc-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "ciaranmelarkey-558cc",
-  storageBucket: "ciaranmelarkey-558cc.appspot.com",
-  messagingSenderId: "17914415580",
-  appId: "1:17914415580:web:5a609d327715fda281a719"
+  apiKey: "HIDDEN",
+  authDomain: "HIDDEN",
+  databaseURL: "HIDDEN",
+  projectId: "HIDDEN",
+  storageBucket: "HIDDEN",
+  messagingSenderId: "HIDDEN",
+  appId: "HIDDEN"
 };
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
